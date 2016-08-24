@@ -7,7 +7,6 @@ import RaisedButton from 'material-ui/RaisedButton';
 import YoastLogo from './YoastLogo';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 
-
 /**
  * The OnboardingWizard class.
  */
