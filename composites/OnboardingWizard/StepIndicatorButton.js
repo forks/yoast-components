@@ -3,7 +3,7 @@ import IconButton from 'material-ui/IconButton';
 import SvgIcon from 'material-ui/SvgIcon';
 
 /**
- * Creates a step button for the wizard. The step buttons are meant to be rendered in a stepper component(StepIndicator)
+ * Creates a step button for the wizard. The step buttons are meant to be rendered in a stepper component(StepProgressIndicator)
  * They indicate a step in the process, show a descriptive tooltip when hovered
  * and trigger a onclick event for going to that step when clicked.
  *

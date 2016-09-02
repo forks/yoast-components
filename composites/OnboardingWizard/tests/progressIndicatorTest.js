@@ -1,8 +1,8 @@
-jest.unmock( '../ProgressIndicator' );
+jest.unmock( '../TextualProgressIndicator' );
 
 import React from 'react';
 import TestUtils from "react-addons-test-utils";
-import ProgressIndicator from '../ProgressIndicator';
+import TextualProgressIndicator from '../TextualProgressIndicator';
 
 describe( 'a processIndicator component', () => {
 	let renderer = TestUtils.createRenderer();
@@ -13,7 +13,7 @@ describe( 'a processIndicator component', () => {
 	};
 
 	it( 'shows a paragraph with the progress', () => {
-		let processIndicator = new ProgressIndicator( inputProps );
+		let processIndicator = new TextualProgressIndicator( inputProps );
 		let children = processIndicator.props.children;
 
 		expect( processIndicator.type ).toEqual( 'p' );
@@ -25,7 +25,7 @@ describe( 'a processIndicator component', () => {
 	} );
 
 	it( 'shows unknown progress with currentStepNumber 0', () => {
-		let processIndicator = new ProgressIndicator(
+		let processIndicator = new TextualProgressIndicator(
 			{
 				currentStepNumber: 0,
 				totalSteps: 1
@@ -39,7 +39,7 @@ describe( 'a processIndicator component', () => {
 	it( 'shows unknown progress with total steps lower than the current step', () => {
 		let currentStepNumber = 2;
 
-		let processIndicator = new ProgressIndicator(
+		let processIndicator = new TextualProgressIndicator(
 			{
 				currentStepNumber,
 				totalSteps: 1
@@ -54,29 +54,29 @@ describe( 'a processIndicator component', () => {
 
 	it( 'throws error with one or more missing parameters', () => {
 		console.error = jest.genMockFn();
-		renderer.render( <ProgressIndicator /> );
+		renderer.render( <TextualProgressIndicator /> );
 		renderer.getRenderOutput();
 
 		expect( console.error ).toBeCalled();
 
 		let errors = console.error.mock.calls;
 		expect( errors[ 0 ][ 0 ] )
-			.toContain( "Warning: Failed prop type: Required prop `currentStepNumber` was not specified in `ProgressIndicator`." );
+			.toContain( "Warning: Failed prop type: Required prop `currentStepNumber` was not specified in `TextualProgressIndicator`." );
 		expect( errors[ 1 ][ 0 ] )
-			.toContain( "Warning: Failed prop type: Required prop `totalSteps` was not specified in `ProgressIndicator`." );
+			.toContain( "Warning: Failed prop type: Required prop `totalSteps` was not specified in `TextualProgressIndicator`." );
 	} );
 
 	it( 'throws error with invalid prop types', () => {
 		console.error = jest.genMockFn();
-		renderer.render( <ProgressIndicator currentStepNumber={"test"} totalSteps={[]}/> );
+		renderer.render( <TextualProgressIndicator currentStepNumber={"test"} totalSteps={[]}/> );
 		renderer.getRenderOutput();
 
 		expect( console.error ).toBeCalled();
 
 		let errors = console.error.mock.calls;
 		expect( errors[ 0 ][ 0 ] )
-			.toContain( "Warning: Failed prop type: Invalid prop `currentStepNumber` of type `string` supplied to `ProgressIndicator`" );
+			.toContain( "Warning: Failed prop type: Invalid prop `currentStepNumber` of type `string` supplied to `TextualProgressIndicator`" );
 		expect( errors[ 1 ][ 0 ] )
-			.toContain( "Warning: Failed prop type: Invalid prop `totalSteps` of type `array` supplied to `ProgressIndicator`" );
+			.toContain( "Warning: Failed prop type: Invalid prop `totalSteps` of type `array` supplied to `TextualProgressIndicator`" );
 	} );
 } );

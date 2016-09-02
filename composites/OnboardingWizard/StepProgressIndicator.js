@@ -1,5 +1,5 @@
 import React from "react";
-import CustomStepButton from "./StepButton";
+import CustomStepButton from "./StepIndicatorButton";
 import {Stepper, Step, StepButton} from 'material-ui/Stepper';
 
 /**
@@ -8,9 +8,9 @@ import {Stepper, Step, StepButton} from 'material-ui/Stepper';
  */
 class StepIndicator extends React.Component {
 	/**
-	 * Initializes the stepIndex(current step number) for the StepIndicator, based on the properties.
+	 * Initializes the stepIndex(current step number) for the StepProgressIndicator, based on the properties.
 	 *
-	 * @param {object} props The properties for the StepIndicator.
+	 * @param {object} props The properties for the StepProgressIndicator.
 	 */
 	constructor( props ) {
 		super( props );
@@ -23,14 +23,14 @@ class StepIndicator extends React.Component {
 	/**
 	 * Updates the state and re-renders the indicator when new properties are set.
 	 *
-	 * @param {object} props The properties for the StepIndicator.
+	 * @param {object} props The properties for the StepProgressIndicator.
 	 */
 	componentWillReceiveProps( props ) {
 		this.setState( props );
 	}
 
 	/**
-	 * Renders the step buttons in the StepIndicator(Stepper).
+	 * Renders the step buttons in the StepProgressIndicator(Stepper).
 	 *
 	 * @returns {JSX.Element} The button components.
 	 */
@@ -62,7 +62,7 @@ class StepIndicator extends React.Component {
 	}
 
 	/**
-	 * Renders the StepIndicator
+	 * Renders the StepProgressIndicator
 	 *
 	 * @returns {JSX.Element} The rendered step indicator.
 	 */

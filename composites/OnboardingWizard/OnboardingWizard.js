@@ -1,6 +1,6 @@
 import React from "react";
 import Step from "./Step";
-import StepIndicator from "./StepIndicator";
+import StepProgressIndicator from "./StepProgressIndicator";
 import LoadingIndicator from "./LoadingIndicator";
 import sendStep from "./helpers/postJSON";
 import RaisedButton from 'material-ui/RaisedButton';
@@ -242,8 +242,8 @@ class OnboardingWizard extends React.Component {
 			<MuiThemeProvider>
 				<div className="yoast-wizard-body">
 					<YoastLogo height={93} width={200}/>
-					<StepIndicator steps={this.props.steps} stepIndex={this.getCurrentStepNumber() - 1}
-					               onClick={( stepNumber ) => this.postStep( stepNumber )}/>
+					<StepProgressIndicator steps={this.props.steps} stepIndex={this.getCurrentStepNumber() - 1}
+					                       onClick={( stepNumber ) => this.postStep( stepNumber )}/>
 					<div className="yoast-wizard-container">
 						<div className="yoast-wizard">
 							<Step ref="step" currentStep={this.state.currentStepId} title={step.title}
